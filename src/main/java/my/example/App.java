@@ -30,8 +30,6 @@ public class App {
                     .createScoped(Lists.newArrayList("https://www.googleapis.com/auth/cloud-platform"));
 
             Storage storage = StorageOptions.newBuilder().setCredentials(credentials).build().getService();
-            // Storage storage =
-            // StorageOptions.newBuilder().setProjectId("psyched-bruin-281217").build().getService();
             Page<Bucket> buckets = storage.list();
 
             for (Bucket bucket : buckets.iterateAll()) {
